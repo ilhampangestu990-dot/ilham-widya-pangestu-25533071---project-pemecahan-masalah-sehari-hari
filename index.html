@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belanja Terencana</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="label">ASISTEN BELANJA HARIAN</p>
+      <h1>Belanja tanpa <span>kebablasan.</span></h1>
+      <p class="intro">
+        Catat kebutuhanmu, tentukan anggaran, lalu cek perkiraan total sebelum berangkat.
+      </p>
+    </header>
+
+    <div class="shopping-area">
+      <section class="panel budget">
+        <div class="panel-heading">
+          <div>
+            <p class="section-label">ANGGARAN BELANJA</p>
+            <label for="budget">Batas pengeluaranmu</label>
+          </div>
+          <span class="money-icon">Rp</span>
+        </div>
+
+        <div class="budget-input">
+          <span>Rp</span>
+          <input id="budget" type="number" min="1" value="150000">
+        </div>
+        <p class="hint">Kamu bisa mengubah anggaran kapan saja.</p>
+
+        <div class="summary">
+          <p>Perkiraan total <strong id="total">Rp0</strong></p>
+          <p><span id="remaining-label">Sisa anggaran</span><strong id="remaining">Rp150.000</strong></p>
+          <div class="progress">
+            <div id="progress-bar"></div>
+          </div>
+          <p id="message" aria-live="polite">Anggaranmu masih aman. Yuk, susun daftar belanja!</p>
+        </div>
+      </section>
+
+      <section class="panel list-panel">
+        <div class="panel-heading list-heading">
+          <div>
+            <p class="section-label">DAFTAR KEBUTUHAN</p>
+            <h2>Apa yang perlu dibeli?</h2>
+          </div>
+          <span id="item-count" class="item-count">0 barang</span>
+        </div>
+
+        <form id="shopping-form">
+          <div class="form-field">
+            <label for="item-name">Nama barang</label>
+            <input id="item-name" type="text" placeholder="Contoh: Beras 5 kg" required>
+          </div>
+          <div class="form-field price-field">
+            <label for="item-price">Harga (Rp)</label>
+            <input id="item-price" type="number" min="1" placeholder="65000" required>
+          </div>
+          <button type="submit" aria-label="Tambah barang">+</button>
+        </form>
+        <p id="form-message" aria-live="polite"></p>
+
+        <ul id="item-list">
+          <li class="empty">
+            <span class="cart-icon">🛒</span>
+            <strong>Daftarnya masih kosong</strong>
+            <span>Tambahkan kebutuhan pertamamu di atas.</span>
+          </li>
+        </ul>
+
+        <p class="tip">✦ &nbsp;Harga hanya perkiraan. Cek kembali sebelum berbelanja, ya!</p>
+      </section>
+    </div>
+
+    <footer>Rencana kecil, keputusan belanja lebih bijak.</footer>
+  </main>
+</body>
+</html>
